@@ -9,7 +9,7 @@ const isProd = process.env.NODE_ENV === 'production';
  */
 function getEntryOutput() {
   return {
-    entry: path.resolve(__dirname, '../../src', 'index.tsx'),
+    entry: path.resolve(__dirname, '../../src', 'index.jsx'),
     output: {
       filename: isProd ? '[name].js' : '[name].[contenthash].js',
       path: path.resolve(__dirname, '../../build'),

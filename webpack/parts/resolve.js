@@ -8,7 +8,7 @@ const path = require('path');
  */
 function getResolve() {
   return {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
     alias: {
       assets: path.resolve(__dirname, '../../src/assets'),
       components: path.resolve(__dirname, '../../src/components'),

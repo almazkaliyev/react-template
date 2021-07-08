@@ -1,14 +1,14 @@
 const getBabelLoader = require('../loaders/babel-loader');
 
 /**
- * Returns a flow for process ts and tsx input
+ * Returns a flow for process js and jsx input
  * @memberOf module:Presets
  * @return {Preset}
  */
-function getTypeScriptPreset() {
+function getJavaScriptPreset() {
   return {
-    test: /\.(ts|tsx)$/,
+    test: /\.(js|jsx)$/,
     use: [getBabelLoader()],
   };
 }
-module.exports = getTypeScriptPreset;
+module.exports = getJavaScriptPreset;

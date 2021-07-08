@@ -1,19 +1,16 @@
 {
   "extends": [
-    "airbnb-typescript",
+    "airbnb",
     "airbnb/hooks",
     "plugin:sonarjs/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
-  "parser": "@typescript-eslint/parser",
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": 9,
-    "project": "tsconfig.json",
     "sourceType": "module"
   },
   "env": {
@@ -21,7 +18,12 @@
     "es6": true
   },
   "plugins": [
+    "import",
     "eslint-plugin-import-helpers",
+    "jsx-a11y",
+    "prettier",
+    "react",
+    "react-hooks",
     "sonarjs"
   ],
   "settings": {
@@ -30,19 +32,13 @@
     }
   },
   "rules": {
-    "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/dot-notation": "off",
-    "@typescript-eslint/no-empty-interface": ["error", {
-        "allowSingleExtends": true
-      }
-    ],
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-unused-expressions": "off",
-    "@typescript-eslint/no-shadow": "off",
+    "prettier/prettier": "error",
     "comma-dangle": "off",
     "eol-last": "error",
     "global-require": "off",
     "import/no-cycle": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
     "import-helpers/order-imports": ["error", {
       "alphabetize": {
         "ignoreCase": true,
@@ -55,22 +51,22 @@
       ],
       "newlinesBetween": "always"
     }],
-    "import/prefer-default-export": "off",
     "max-len": ["error", {
-      "code": 130
+      "code": 120,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true,
+      "ignoreUrls": true,
+      "ignoreRegExpLiterals": true
     }],
     "no-multiple-empty-lines": ["error", {
       "max": 1
     }],
     "no-param-reassign": "off",
     "no-trailing-spaces":"error",
-    "quotes": ["error", "single"],
+    "no-unused-vars": "warn",
     "react-hooks/exhaustive-deps": "off",
     "react/destructuring-assignment": ["warn", "always", {
       "ignoreClassFields": true
-    }],
-    "react/jsx-max-props-per-line": ["error", {
-      "maximum": 3
     }],
     "react/jsx-props-no-spreading": ["error", {
       "custom": "ignore"

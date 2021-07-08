@@ -1,5 +1,5 @@
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const { extendDefaultPlugins } = require("svgo");
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const { extendDefaultPlugins } = require('svgo');
 
 /**
  * @description Returns a plugin, which process images
@@ -18,13 +18,13 @@ function getImagminPlugin() {
           {
             plugins: extendDefaultPlugins([
               {
-                name: "removeViewBox",
+                name: 'removeViewBox',
                 active: true,
               },
               {
-                name: "addAttributesToSVGElement",
+                name: 'addAttributesToSVGElement',
                 params: {
-                  attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
+                  attributes: [{ xmlns: 'http://www.w3.org/2000/svg' }],
                 },
               },
             ]),
