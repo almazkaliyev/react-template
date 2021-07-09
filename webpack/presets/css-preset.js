@@ -13,7 +13,7 @@ function getCssPreset() {
   loaders.push(...getCssLoader());
 
   return {
-    test: /\.(scss|css)$/,
+    test: /\.(less|css)$/,
     use: loaders,
   };
 }
